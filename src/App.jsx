@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Instagram, Facebook, Twitter, ArrowUp } from 'lucide-react';
+import { Menu, X, ArrowUp } from 'lucide-react';
+import { siTiktok, siXiaohongshu, siTaobao } from 'simple-icons/icons';
+
+// Simple Icon Component Wrapper
+const SimpleIcon = ({ icon, className }) => (
+  <svg 
+    role="img" 
+    viewBox="0 0 24 24" 
+    className={className} 
+    fill="currentColor" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>{icon.title}</title>
+    <path d={icon.path} />
+  </svg>
+);
 
 // Import Components
 import Hero from './components/Hero';
@@ -129,9 +144,12 @@ const Footer = () => {
               为下一代探险家及引领他们的女性打造高端户外服饰。技术性能与极简优雅的完美结合。
             </p>
             <div className="flex gap-6">
-              <Instagram className="w-5 h-5 cursor-pointer hover:text-brand-sage transition-colors" />
-              <Facebook className="w-5 h-5 cursor-pointer hover:text-brand-sage transition-colors" />
-              <Twitter className="w-5 h-5 cursor-pointer hover:text-brand-sage transition-colors" />
+              {/* Douyin (using TikTok icon as they are visually identical) */}
+              <SimpleIcon icon={siTiktok} className="w-5 h-5 cursor-pointer hover:text-brand-sage transition-colors" />
+              {/* Xiaohongshu */}
+              <SimpleIcon icon={siXiaohongshu} className="w-5 h-5 cursor-pointer hover:text-brand-sage transition-colors" />
+              {/* Taobao */}
+              <SimpleIcon icon={siTaobao} className="w-5 h-5 cursor-pointer hover:text-brand-sage transition-colors" />
             </div>
           </div>
 
